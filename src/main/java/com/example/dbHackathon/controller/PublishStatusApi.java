@@ -1,13 +1,8 @@
 package com.example.dbHackathon.controller;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Properties;
 
 import org.hibernate.validator.parameternameprovider.ParanamerParameterNameProvider;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,26 +28,9 @@ public class PublishStatusApi {
 	
 	
 	static String consumerKeyStr = "D4ikKCBqP1WpG1goGl5TQx6fu";
-	static String consumerSecretStr;
+	static String consumerSecretStr = "UqawfPx7TBMKeK6UFWgqrfJZ4NMbT6wmv1O5cFkHF3aScR7sNq";
 	static String accessTokenStr = "1180176260510535680-KfXrLtv9tDtb7oIlwX7ExzS7RHCy94";
-	static String accessTokenSecretStr;
-
-	public PublishStatusApi() {
-		try (InputStream input = getClass().getClassLoader().getResourceAsStream("application.properties")) {
-
-			Properties prop = new Properties();
-
-			// load a properties file
-			prop.load(input);
-
-			// get the property value and print it out
-			consumerSecretStr = prop.getProperty("consumerSecretStr");
-			accessTokenSecretStr = prop.getProperty("accessTokenSecretStr");
-
-		} catch (IOException ex) {
-			ex.printStackTrace();
-		}
-	}
+	static String accessTokenSecretStr = "YIvVSIYshUrCbOTeLwHKuVesGaj3qh4wARrKNWBCOI9uh";
 
 	@GetMapping("/twitter")
 	public String updateTwitterStatus() {
